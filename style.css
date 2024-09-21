@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  width: 90vw; /* Use viewport width for responsiveness */
+  max-width: 400px; /* Max width for larger screens */
+  height: 90vw; /* Maintain a square aspect ratio */
+  max-height: 400px;
+  background-color: #000;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+/* Grid lines */
+.line {
+  position: absolute;
+  background-color: white;
+}
+
+.vertical {
+  width: 4px;
+  height: 100%;
+  top: 0;
+}
+
+.horizontal {
+  width: 100%;
+  height: 4px;
+  left: 0;
+}
+
+.v1 {
+  left: 33.33%;
+}
+
+.v2 {
+  left: 66.66%;
+}
+
+.h1 {
+  top: 33.33%;
+}
+
+.h2 {
+  top: 66.66%;
+}
+
+.scoreBoard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90vw; /* Responsive width */
+  max-width: 600px; /* Max width for larger screens */
+  margin-top: 20px;
+  color: #fff;
+}
+
+.score {
+  text-align: center;
+}
+
+.score p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.score h3 {
+  margin: 0;
+}
+
+button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#resetBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .scoreBoard {
+    width: 90vw;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .scoreBoard {
+    max-width: 600px;
+  }
+}
+
+.blinking-image {
+  animation: blink-animation 1s steps(1, start) infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
