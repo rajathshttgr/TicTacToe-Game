@@ -38,7 +38,10 @@ function userWinning() {
     return updateScore(6, 7, 8);
   } else {
     if ( table[0] + table[1] + table[2] + table[3] + table[4] + table[5] + table[6] + table[7] + table[8]== 5) {
-      document.getElementById('tieScore').innerHTML = parseInt(document.getElementById('tieScore').innerHTML) + 1;
+      
+document.getElementById('tieScore').innerHTML = parseInt(document.getElementById('tieScore').innerHTML) + 1;
+
+      blinkLine();
 
       resetGame();
     } else {
@@ -233,7 +236,6 @@ random();
  function randomChoice(x) {
     table[x] = 0;
     let buttonId = 'idx' + x;
-    console.log(table);
     document.getElementById(buttonId).innerHTML = '<img src="Images/computerInput.png" alt="computerInput">';
 
     document.getElementById(buttonId).disabled = true;
@@ -338,28 +340,36 @@ function blinkImage(x, y, z, a) {
   if (a == 1) user = "userInput";
   if (a == 0) user = "computerInput";
 
-
-
   document.getElementById(buttonId).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
   document.getElementById(buttonId1).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
-
-
   document.getElementById(buttonId2).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
-
-
-document.getElementById(buttonId).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
-
-  document.getElementById(buttonId1).innerHTML= `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
-
 
 }
 
+function blinkLine() {
+  const lines = document.querySelectorAll('.line');
+  
+  let isVisible = true;
+  let blinkCount = 0;
+  
+  const interval = setInterval(() => {
+    lines.forEach(line => {
+      line.style.visibility = isVisible ? 'hidden' : 'visible';
+    });
+    isVisible = !isVisible;
+    blinkCount++;
+
+    // Stop after 2 complete blinks (4 visibility changes in total)
+    if (blinkCount === 4) {
+      clearInterval(interval);
+    }
+  }, 250); // Blink every 500 milliseconds
+}
 /* 3*3 Matrix all possible combinations without repeating:
 0 1 2. 0 3 6. 0 4 8
 1 4 7. 2 5 8. 2 4 6
 3 4 5. 6 7 8.
 */
-
 //num 8 for unoccupied 
 //num 1 for player
 //num 0 for computer

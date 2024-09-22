@@ -54,7 +54,7 @@ header {
 /* Grid lines */
 .line {
   position: absolute;
-  background-color: white;
+  background-color: #fff;
 }
 
 .vertical {
@@ -166,6 +166,8 @@ button img {
   }
 }
 
+
+
 .blinking-image {
   animation: blink-animation 1s steps(1, start) infinite;
 }
@@ -179,3 +181,5 @@ button img {
     opacity: 1;
   }
 }
+
+
