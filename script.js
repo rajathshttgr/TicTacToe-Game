@@ -273,7 +273,7 @@ function resetGame() {
   var beepSound = document.getElementById('beepAudio');
   beepSound.play();
 
-  setTimeout(newGame, 2000);
+  setTimeout(newGame, 1500);
 }
 function newGame() {
   table = [8, 8, 8, 8, 8, 8, 8, 8, 8];
@@ -293,7 +293,7 @@ function newGame() {
 function resetLostGame() {
   var beepSound = document.getElementById('gameLost');
   beepSound.play();
-  setTimeout(newGame, 2000);
+  setTimeout(newGame, 1500);
 }
 
 function newGame() {
