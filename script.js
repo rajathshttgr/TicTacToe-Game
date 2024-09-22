@@ -339,11 +339,17 @@ function blinkImage(x, y, z, a) {
   if (a == 0) user = "computerInput";
 
 
+
   document.getElementById(buttonId).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
   document.getElementById(buttonId1).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
 
 
   document.getElementById(buttonId2).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
+
+
+document.getElementById(buttonId).innerHTML = `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
+
+  document.getElementById(buttonId1).innerHTML= `<img src="Images/${user}.png" alt="${user}" class="blinking-image">`;
 
 
 }
