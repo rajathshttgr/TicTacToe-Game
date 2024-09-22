@@ -22,9 +22,12 @@ header {
 
 .container {
   position: relative;
-  width: 90vw; /* Use viewport width for responsiveness */
-  max-width: 400px; /* Max width for larger screens */
-  height: 90vw; /* Maintain a square aspect ratio */
+  width: 90vw;
+  /* Use viewport width for responsiveness */
+  max-width: 400px;
+  /* Max width for larger screens */
+  height: 90vw;
+  /* Maintain a square aspect ratio */
   max-height: 400px;
   background-color: #000;
   margin: 0 auto;
@@ -89,8 +92,10 @@ header {
   background-color: #000;
   padding: 20px;
   border-radius: 10px;
-  width: 90vw; /* Responsive width */
-  max-width: 600px; /* Max width for larger screens */
+  width: 90vw;
+  /* Responsive width */
+  max-width: 600px;
+  /* Max width for larger screens */
   margin-top: 20px;
   color: #fff;
 }
@@ -169,6 +174,7 @@ button img {
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
