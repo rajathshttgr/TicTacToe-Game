@@ -2,13 +2,20 @@ let table = [8, 8, 8, 8, 8, 8, 8, 8, 8];
 
 function userInput(idx) {
   let buttonId = 'idx' + idx;
-  table[idx] = 1; document.getElementById(buttonId).innerHTML = '<img src="Images/userInput.png" alt="userInput">';
+  table[idx] = 1;
+  
+  document.getElementById(buttonId).innerHTML = '<img src="Images/userInput.png" alt="userInput">';
   document.getElementById(buttonId).disabled = true;
   continueGame();
 }
 
 function continueGame() {
+  let sum=table[0] + table[1] + table[2] + table[3] + table[4] + table[5] + table[6] + table[7] + table[8];
+  if(sum== 65){
+    randomAvailabeX();
+  }else{
   userWinning();
+  }
 }
 
 
@@ -30,7 +37,7 @@ function userWinning() {
   } else if (table[6] + table[7] + table[8] == 3) {
     return updateScore(6, 7, 8);
   } else {
-    if (table[0] + table[1] + table[2] + table[3] + table[4] + table[5] + table[6] + table[7] + table[8] == 5) {
+    if ( table[0] + table[1] + table[2] + table[3] + table[4] + table[5] + table[6] + table[7] + table[8]== 5) {
       document.getElementById('tieScore').innerHTML = parseInt(document.getElementById('tieScore').innerHTML) + 1;
 
       resetGame();
@@ -210,12 +217,20 @@ function ultraAttackCheck(a, b, c) {
 }
 
 function randomAvailabe() {
-  for (let i = 0; i < 8; i++) {
-    if (table[i] != 0 && table[i] != 1) {
-      return randomChoice(i);
-    }
+
+ function random() {
+  let randomNum = Math.floor(Math.random() * 9);
+
+  if (table[randomNum] == 0 || table[randomNum] == 1) {
+    return randomChoice(randomNum);
+  } else {
+    return random();
   }
-  function randomChoice(x) {
+ }
+
+random();
+  
+ function randomChoice(x) {
     table[x] = 0;
     let buttonId = 'idx' + x;
     console.log(table);
@@ -224,6 +239,35 @@ function randomAvailabe() {
     document.getElementById(buttonId).disabled = true;
   }
 }
+
+//random available for user X
+
+function randomAvailabeX() {
+return random();
+  
+ function random() {
+  let randomNum = Math.floor(Math.random() * 9);
+
+  if (table[randomNum] != 0 && table[randomNum] != 1) {
+    return randomChoice(randomNum);
+  } else {
+    return random();
+  }
+ }
+
+
+  
+ function randomChoice(x) {
+    table[x] = 0;
+    let buttonId = 'idx' + x;
+    console.log(table);
+    document.getElementById(buttonId).innerHTML = '<img src="Images/computerInput.png" alt="computerInput">';
+
+    document.getElementById(buttonId).disabled = true;
+  }
+}
+
+
 
 function resetGame() {
   var beepSound = document.getElementById('beepAudio');
