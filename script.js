@@ -312,6 +312,13 @@ function newGame() {
     button.disabled = false;
   }
 }
+function resetScore(){
+  document.getElementById('playerScore').innerHTML = 0;
+  document.getElementById('computerScore').innerHTML = 0;
+
+  document.getElementById('tieScore').innerHTML = 0;
+  
+}
 function quickReset() {
 
   var beepSound = document.getElementById('gameLost');

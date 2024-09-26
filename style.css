@@ -121,7 +121,20 @@ button img {
   object-fit: cover;
 }
 
+
 #resetBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+}
+
+#resetScore {
   width: 40px;
   height: 40px;
   border-radius: 50%;

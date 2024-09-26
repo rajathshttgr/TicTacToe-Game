@@ -1,59 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tic Tac Toe</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Tic Tac Toe</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <header>
+      <h1>TIC TAC TOE</h1>
+      <audio id="beepAudio" src="Audio/audio.wav" preload="auto"></audio>
+      <audio id="gameLost" src="Audio/gameLost.wav" preload="auto"></audio>
+    </header>
+    <div class="container">
+      <button class="btn" id="idx0" onclick="userInput(0)"></button>
+      <button class="btn" id="idx1" onclick="userInput(1)"></button>
+      <button class="btn" id="idx2" onclick="userInput(2)"></button>
+      <button class="btn" id="idx3" onclick="userInput(3)"></button>
+      <button class="btn" id="idx4" onclick="userInput(4)"></button>
+      <button class="btn" id="idx5" onclick="userInput(5)"></button>
+      <button class="btn" id="idx6" onclick="userInput(6)"></button>
+      <button class="btn" id="idx7" onclick="userInput(7)"></button>
+      <button class="btn" id="idx8" onclick="userInput(8)"></button>
 
-<body>
-  <header>
-    <h1>TIC TAC TOE</h1>
-    <audio id="beepAudio" src="Audio/audio.wav" preload="auto"></audio>
-    <audio id="gameLost" src="Audio/gameLost.wav" preload="auto"></audio>
-
-  </header>
-  <div class="container">
-    <button class="btn" id="idx0" onclick="userInput(0)"></button>
-    <button class="btn" id="idx1" onclick="userInput(1)"></button>
-    <button class="btn" id="idx2" onclick="userInput(2)"></button>
-    <button class="btn" id="idx3" onclick="userInput(3)"></button>
-    <button class="btn" id="idx4" onclick="userInput(4)"></button>
-    <button class="btn" id="idx5" onclick="userInput(5)"></button>
-    <button class="btn" id="idx6" onclick="userInput(6)"></button>
-    <button class="btn" id="idx7" onclick="userInput(7)"></button>
-    <button class="btn" id="idx8" onclick="userInput(8)"></button>
-
-    <!-- Grid lines -->
-    <div class="line vertical v1"></div>
-    <div class="line vertical v2"></div>
-    <div class="line horizontal h1"></div>
-    <div class="line horizontal h2"></div>
-  </div>
-
-
-  <div class="scoreBoard">
-    <div class="score">
-      <p>PLAYER (X)</p>
-      <h3 id="playerScore">0</h3>
+      <!-- Grid lines -->
+      <div class="line vertical v1"></div>
+      <div class="line vertical v2"></div>
+      <div class="line horizontal h1"></div>
+      <div class="line horizontal h2"></div>
     </div>
-    <div class="score">
-      <p>TIE</p>
-      <h3 id="tieScore">0</h3>
-    </div>
-    <div class="score">
-      <p>COMPUTER (0)</p>
-      <h3 id="computerScore">0</h3>
-    </div>
-    <div>
-      <button id=resetBtn onclick="quickReset()"><img src="Images/settings.png" alt="userInput"></button>
-    </div>
-  </div>
 
+    <div class="scoreBoard">
+      <div>
+        <button id="resetScore" onclick="resetScore()">
+          <img src="Images/reset.png" alt="scoreReset" />
+        </button>
+      </div>
+      <div class="score">
+        <p>PLAYER (X)</p>
+        <h3 id="playerScore">0</h3>
+      </div>
+      <div class="score">
+        <p>TIE</p>
+        <h3 id="tieScore">0</h3>
+      </div>
+      <div class="score">
+        <p>COMPUTER (0)</p>
+        <h3 id="computerScore">0</h3>
+      </div>
+      <div>
+        <button id="resetBtn" onclick="quickReset()">
+          <img src="Images/settings.png" alt="gameReset" />
+        </button>
+      </div>
+    </div>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
