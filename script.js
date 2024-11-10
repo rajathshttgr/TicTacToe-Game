@@ -248,6 +248,7 @@ function randomAvailabeX() {
 return random();
   
  function random() {
+   /*
    if(table[0] == 1 || table[2]==1 || table[6]==1 || table[8]==1){
      return randomChoice(4);
    }else if(table[1] == 1 || table[3]==1 || table[4]==1){
@@ -255,7 +256,7 @@ return random();
    }else{
      return randomChoice(0);
    }
-   /*
+   */
   let randomNum = Math.floor(Math.random() * 9);
 
   if (table[randomNum] != 0 && table[randomNum] != 1) {
@@ -263,7 +264,6 @@ return random();
   } else {
     return random();
   }
-  */
  }
 
 
